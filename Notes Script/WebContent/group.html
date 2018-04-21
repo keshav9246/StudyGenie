@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Group</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type= "text/javascript" src="JS/home.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
+
+
+
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/createGroup.css">
+    <link rel="stylesheet" href="CSS/search.css">
+</head>
+<body>
+    <br/>
+    <br/>
+    <b id="tab1" class="hiddenTarget"></b>
+    <b id="tab2" class="hiddenTarget"></b>
+    <b id="tab3" class="hiddenTarget"></b>
+    <b id="tab4" class="hiddenTarget"></b>
+    <b id="tab5" class="hiddenTarget"></b>
+    <b id="tab6" class="hiddenTarget"></b>
+    <div class="row">
+        <ul class="tabs">
+            <li><a href="#tab1" class="default tab1 tabpages">Home</a></li>
+            <li><a href="#tab2" class="tab2 tabpages">Create Notes</a></li>
+            <li><a href="#tab3" class="tab3 tabpages">Cheat Sheets</a></li>
+            <li><a href="#tab4" class="tab4 tabpages">Groups</a></li>
+            <li><a href="#tab5" class="tab5 tabpages">My Notes</a></li>
+            <li><a href="#tab6" class="tab6 tabpages">Search</a></li>
+        </ul>
+    </div>
+    <br/>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <h2 id="grpName">Group Name</h2>
+                </div>
+                <div class="row">
+                    <button type="button" id="createNewNote" class="btn btn-primary btn-lg">Create a new note for this Group</button>
+                </div>
+                <div class="row">
+                    <h4>Recently Uploaded notes in this group</h4>
+                </div>
+                <div class="row" id="notes">
+                </div>
+            </div>
+            <div class="col-sm-4" id="sideBar" style="background-color: aqua;">
+                <h3>Group Members</h3>
+                <ul id="memberNames">
+                </ul>
+                <br/>
+                <br/>
+                <button type="button" id="addMember" class="btn btn-success">Add New Member</button>
+            </div>
+        </div>
+
+</body>
+
+<div class="modal" id="deleteUserModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Remove User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to remove user?</p>
+                <p id="userName"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="addUserModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Username of the User you want to add:
+                <input type="text" id="addUsername" class="form-control" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="createNoteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Note</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="createGroupNote">
+                    <input type="text" class="form-control" id = "Title" placeholder = "Title"> <br>
+                    <br>
+                    <input type = "text" class="form-control" id = "Tags" placeholder = "Topics (Comma seperated)"> <br>
+                    <br>
+                    <div id="summernote"></div>
+                    *This note will be posted only in this group
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Create</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        for(var i=0;i<6;i++){
+            var div = $("<div>", {id: "note_"+[i]});
+            $("#notes").append(div);
+            $("#note_"+[i]).html(["<div class='mdl-card mdl-shadow--2dp demo-card-square'>",
+                "<div class='mdl-card__title mdl-card--expand'>",
+                "<h2 class='mdl-card__title-text'>Title</h2>",
+                "</div>",
+                "<div class='mdl-card__supporting-text' style='height: 70%'>",
+                "Content",
+                "</div>",
+                "<div class='mdl-card__actions mdl-card--border'>",
+                "<a class='mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'>",
+                "View",
+                "</a>",
+                "</div>",
+                "</div>"].join(""));
+        }
+
+        var data=[{"name":"Ayush Ruchandani"},{"name":"Mohamad Mudassar Shekh"},{"name":"Keshav Rajput"},{"name":"Bharath"}];
+        for(var i=0;i<data.length;i++){
+            var li = $("<li>",{id: "member_"+[i]});
+            $("#memberNames").append(li);
+            $("#member_"+[i]).attr({style : "font-size: 25px; padding: 5px;"})
+            $("#member_"+[i]).text(data[i].name);
+            var cross = $("<button>", {id: "delete_"+[i]});
+            cross.attr({type: "button", class: "btn btn-danger float-right", style:"font-size:10px"});
+            cross.text('x');
+            $("#member_"+[i]).append(cross);
+        }
+
+    });
+
+    $("#addMember").click(function () {
+        console.log("click recorded");
+        $('#addUserModal').modal('show');
+    });
+
+
+    $("#createNewNote").click(function () {
+        $('#createNoteModal').modal('show');
+    });
+
+    function deleteUser(index){
+        console.log("click recorded");
+        var name = $("member_"+index).text();
+        $("#userName").text(name);
+        $('#deleteUserModal').modal('show');
+    }
+
+    $('#summernote').summernote({
+
+        toolbar: [
+            // [groupName, [list of button]]
+
+            ['style', ['bold',  'underline','italic', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ],
+        placeholder: 'Content',
+        height: 300,                 // set editor height
+        minHeight: 100,             // set minimum height of editor
+        maxHeight: 500,             // set maximum height of editor
+        focus: true                  // set focus to editable area after initializing summernote
+    });
+
+</script>
+
+</html>

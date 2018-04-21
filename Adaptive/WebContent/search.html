@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1" content="width=device-width, initial-scale=1.8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="createGroup.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<link rel="stylesheet" href="search.css">
+
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//raw.github.com/botmonster/jquery-bootpag/master/lib/jquery.bootpag.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  
+  <script type="text/javascript" src="jquery.bootpag.js"></script>
+  <script src="search.js"></script>
+  <script src="index.js"> </script>
+     
+</head>
+  
+<body class="body">
+
+<br/>
+<div class="row" align="center" style="text-align: center; padding-left: 43%">
+ <h1 align="center" style="font-family:-webkit-pictograph; font-size: -webkit-pictograph; text-align: center; font-weight: bolder; color:#84BABA;">Study Genie</h1>
+</div>
+<br/>
+<header class="mainHeader">
+
+  <nav><ul>
+    <li><a href="home.html">Home</a></li>
+    <!-- We give this first list item in the navigation bar a class of "active" because we want to style it differently (along with other nav links that are hovered over) to indicate what page we are on (or will go to) -->
+    <li><a href="createNotes.html	">Create Notes</a></li>
+    <li><a href="groups.html">View Groups</a></li>
+    <li class="active"><a href="search.html">Search</a></li>
+    <li class="dropdown float-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome</a>
+      <ul class="dropdown-menu" style="background-color: rgba(72,72,72,8)">
+        <li><a href="myNotes.html">My Notes</a></li>
+        <li><a href="cheatsheet.html">My Cheatsheets</a></li>
+        <li><a href="userProfile.html">User Profile</a></li>
+        <li><a href="#" onclick="logout();">Logout</a></li>
+      </ul>
+    </li>
+  </ul></nav>
+</header>
+  <br>
+  <div class="mainHeader">
+    <div class="content" style="width:100%;">
+      
+      
+      <div class="topContent" style = "background-color: rgba(70,70,70,8); width:100%;">
+
+  <div id="content">
+    <div class="col-xs-9">
+      <input type="text" id="searchValue" placeholder="Search" class="form-control">
+    </div>
+    <div class="col-xs-3">
+      <button type="button" class="btn btn-default" id="submitSearch">Search</button>
+    </div>
+
+    </div>
+        <br/>
+
+
+
+
+
+
+       
+       </div>
+         
+    
+    <!-- ----------------------------------------------------------------------------------------------------------------- -->    
+    
+     
+  </div>
+
+
+    <div id="searchContent">
+
+
+    </div>
+
+
+    <div class="modal" id="viewNoteModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #03A9F4; color: white; font-weight: bolder; font-size: x-large;">
+            <h5 class="modal-title" id="viewTitle"></h5>
+          </div>
+          <div class="modal-body" id="viewBody">
+          </div>
+          <div class="modal-footer">
+            <div class="col-xs-8">
+              <div class="row" id="authorName"></div>
+              <div class="row" id="likesTag"></div>
+              <div class="row" id="stars"></div>
+            </div>
+            <div class="col-xs-4">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  </div>
+  </body>
+   <script>
+       var searchData = {};
+        // init bootpag
+        $('#page-selection').bootpag({
+            total: 20,
+        }).on("page", function(event, /* page number here */ num){
+             $("#content").html("Insert content"); // some ajax content loading...
+             
+        });
+
+
+        $("#submitSearch").click(function () {
+            var query = $("#searchValue").val();
+            $.ajax({
+                type: "GET",
+                url: "http://laptop-mohd:3000/search/"+query,
+                dataType: "json",
+                success: function (data) {
+                    for(var i=0;i<data.length;i++){
+
+                        searchData = data;
+                        var div = $("<div>", {id: "note_"+[i]});
+                        $("#searchContent").append(div);
+                        $("#note_"+[i]).html(["<div class='mdl-card mdl-shadow--2dp demo-card-square'>",
+                            "<div class='mdl-card__title mdl-card--expand'>",
+                            "<h2 class='mdl-card__title-text'>"+data[i].title+"</h2>",
+                            "</div>",
+                            "<div id='contentText'"+[i]+" class='mdl-card__supporting-text' style='font-size:xx-small; overflow: auto; width:100%; height: 100%'>",
+                            data[i].content,
+                            "</div>",
+                            "<div class='mdl-card__actions mdl-card--border'>",
+                            "<a class='mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'  onclick='viewModal("  + i + ")' data-toggle='modal' data-target='#viewNoteModal'>",
+                            "View",
+                            "</a>",
+                            "<button id='likes' type='button' class='btn btn-default btn-sm float-right'>",
+                            "<span id='noOfLikes' class='glyphicon glyphicon-thumbs-up'>  "+data[i].vote_up+"</span>",
+                            "</button>",
+                            "<button id='favorite' type='button' class='btn btn-default btn-sm float-right'>",
+                            "<span id='noOfFavorite' class='glyphicon glyphicon-bookmark'>  "+data[i].star+"</span>",
+                            "</button>",
+                            "</div>",
+                            "</div>"].join(""));
+                    }
+                }
+            });
+        });
+        function viewModal(id) {
+            $('#viewNoteModal').on('shown.bs.modal', function () {
+                $('#viewTitle').text(searchData[id].title);
+                $('#viewBody').html(searchData[id].content);
+                $("#authorName").text("Uploaded By: "+searchData[id].author_name);
+                $("#likesTag").text("No of Likes: "+searchData[id].vote_up);
+                $("#stars").text("Star Marks: "+searchData[id].star);
+            });
+        }
+
+        $(document).ready(function () {
+            var keyField = sessionStorage.getItem('keyField');
+            if(keyField == 1){
+                searchByTag();
+            }
+            else if(keyField == 2){
+                searchByUser();
+            }
+        });
+
+
+        function searchByTag(){
+            var searchQuery = sessionStorage.getItem('tagName');
+            if(typeof searchQuery != 'undefined'){
+                $("#searchValue").val(searchQuery);
+                $.ajax({
+                    type: "GET",
+                    url: "http://laptop-mohd:3000/search/"+searchQuery,
+                    dataType: "json",
+                    success: function (data) {
+                        for(var i=0;i<data.length;i++){
+
+                            searchData = data;
+                            var div = $("<div>", {id: "note_"+[i]});
+                            $("#searchContent").append(div);
+                            $("#note_"+[i]).html(["<div class='mdl-card mdl-shadow--2dp demo-card-square'>",
+                                "<div class='mdl-card__title mdl-card--expand'>",
+                                "<h2 class='mdl-card__title-text'>"+data[i].title+"</h2>",
+                                "</div>",
+                                "<div id='contentText'"+[i]+" class='mdl-card__supporting-text' style='font-size:xx-small; overflow: auto; width:100%; height: 100%'>",
+                                data[i].content,
+                                "</div>",
+                                "<div class='mdl-card__actions mdl-card--border'>",
+                                "<a class='mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'  onclick='viewModal("  + i + ")' data-toggle='modal' data-target='#viewNoteModal'>",
+                                "View",
+                                "</a>",
+                                "<button id='likes' type='button' class='btn btn-default btn-sm float-right'>",
+                                "<span id='noOfLikes' class='glyphicon glyphicon-thumbs-up'>  "+data[i].vote_up+"</span>",
+                                "</button>",
+                                "<button id='favorite' type='button' class='btn btn-default btn-sm float-right'>",
+                                "<span id='noOfFavorite' class='glyphicon glyphicon-bookmark'>  "+data[i].star+"</span>",
+                                "</button>",
+                                "</div>",
+                                "</div>"].join(""));
+                        }
+                    }
+                });
+            }
+        }
+
+
+        function searchByUser(){
+            var searchQuery = sessionStorage.getItem('userName');
+            if(typeof searchQuery != 'undefined'){
+                $("#searchValue").val(searchQuery);
+                $.ajax({
+                    type: "GET",
+                    url: "http://laptop-mohd:3000/search/"+searchQuery,
+                    dataType: "json",
+                    success: function (data) {
+                        for(var i=0;i<data.length;i++){
+
+                            searchData = data;
+                            var div = $("<div>", {id: "note_"+[i]});
+                            $("#searchContent").append(div);
+                            $("#note_"+[i]).html(["<div class='mdl-card mdl-shadow--2dp demo-card-square'>",
+                                "<div class='mdl-card__title mdl-card--expand'>",
+                                "<h2 class='mdl-card__title-text'>"+data[i].title+"</h2>",
+                                "</div>",
+                                "<div id='contentText'"+[i]+" class='mdl-card__supporting-text' style='font-size:xx-small; width:100%; height: 100%'>",
+                                data[i].content,
+                                "</div>",
+                                "<div class='mdl-card__actions mdl-card--border'>",
+                                "<a class='mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'  onclick='viewModal("  + i + ")' data-toggle='modal' data-target='#viewNoteModal'>",
+                                "View",
+                                "</a>",
+                                "<button id='likes' type='button' class='btn btn-default btn-sm float-right'>",
+                                "<span id='noOfLikes' class='glyphicon glyphicon-thumbs-up'>  "+data[i].vote_up+"</span>",
+                                "</button>",
+                                "<button id='favorite' type='button' class='btn btn-default btn-sm float-right'>",
+                                "<span id='noOfFavorite' class='glyphicon glyphicon-bookmark'>  "+data[i].star+"</span>",
+                                "</button>",
+                                "</div>",
+                                "</div>"].join(""));
+                        }
+                    }
+                });
+            }
+        }
+
+    </script>
+</html>
+

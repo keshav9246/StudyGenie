@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="JS/registerScript.js"></script> 
+
+<link rel="stylesheet" href="CSS/style.css">
+
+
+
+</head>
+<body>
+
+
+<form action="home.html" method="post">
+	
+	<div>
+		<h3>Security Questions</h3>
+		<p>All fields required</p>
+		<br>
+		<ol>
+			<li>
+				<select id="secQuestion1"
+								required="required"
+								aria-label="Security Question 1"
+								data-security-answer-id="secAnswer1"
+								data-security-question>
+					<option value="">- Choose question 1 -</option>
+					<option value="sq01234">What was your first pet's name?</option>
+					<option value="sq02345">What is your favorite color?</option>
+					<option value="sq03456">What was the theme for your senior prom?</option>
+				</select>
+				<input id="secAnswer1" type="text"
+							 required="required"
+							 aria-describedby="secQuestion1"
+							 data-label-prefix="Security answer 1:"
+							 placeholder="Security answer 1"
+							 aria-label="Please choose a question for security question 1"
+							 data-default-label="Please choose a question for security question 1" />
+			</li>
+			<li>
+				<select id="secQuestion2"
+								required="required"
+								aria-label="Security Question 2"
+								data-security-answer-id="secAnswer2"
+								data-security-question>
+					<option value="">- Choose question 2 -</option>
+					<option value="sq01234">What was your first pet's name?</option>
+					<option value="sq02345">What is your favorite color?</option>
+					<option value="sq03456">What was the theme for your senior prom?</option>
+				</select>
+				<input id="secAnswer2" type="text"
+							 required="required"
+							 aria-describedby="secQuestion2"
+							 data-label-prefix="Security answer 2:"
+							 placeholder="Security answer 2"
+							 aria-label="Please choose a question for security question 2"
+							 data-default-label="Please choose a question for security question 2" />
+			</li>
+		
+		</ol>
+	</div>
+	<br>
+	<br>
+	<br>
+	
+<div>
+	<h3>Please select atleast 5 technologies of your interest</h3>
+	<input type = "checkbox" id= "tech1" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech2" name="technology" value="c">C
+	<input type = "checkbox" id= "tech3" name="technology" value="python">Python
+	<input type = "checkbox" id= "tech4" name="technology" value="cpp">C++
+	<input type = "checkbox" id= "tech5" name="technology" value="js">JavaScript
+	<input type = "checkbox" id= "tech6" name="technology" value="html">HTML
+	<input type = "checkbox" id= "tech7" name="technology" value="css">CSS
+	<input type = "checkbox" id= "tech8" name="technology" value="c#">C#
+	<input type = "checkbox" id= "tech9" name="technology" value="sql">SQL
+	<input type = "checkbox" id= "tech10" name="technology" value="angularjs">Angular JS
+	<input type = "checkbox" id= "tech11" name="technology" value="jquery">JQuery
+	<input type = "checkbox" id= "tech12" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech13" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech14" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech15" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech16" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech17" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech18" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech19" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech20" name="technology" value="java">Java
+	<input type = "checkbox" id= "tech21" name="technology" value="java">Java
+	
+	
+	<br>
+	<input class = "continue_button" type="submit" value="Submit" disabled="disabled" />
+
+</div>
+</form>
+
+
+
+</body>
+</html>

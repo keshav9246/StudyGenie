@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" content="width=device-width, initial-scale=1.8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="home.css"></head>
+ 
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
+<script src="index.js"> </script>
+  
+</head>
+  
+<body class="body" style = "color:#84BABE;font: bold;">
+
+<br/>
+<div class="row" align="center" style="text-align: center; padding-left: 43%">
+    <h1 align="center" style="font-family:-webkit-pictograph; font-size: -webkit-pictograph; text-align: center; font-weight: bolder; color:#84BABA;">Study Genie</h1>
+</div>
+<br/>
+<header class="mainHeader">
+
+    <nav><ul>
+        <li><a href="home.html">Home</a></li>
+        <!-- We give this first list item in the navigation bar a class of "active" because we want to style it differently (along with other nav links that are hovered over) to indicate what page we are on (or will go to) -->
+        <li class="active"><a href="createNotes.html	">Create Notes</a></li>
+        <li><a href="groups.html">View Groups</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li class="dropdown float-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome</a>
+            <ul class="dropdown-menu" style="background-color: rgba(72,72,72,8)">
+                <li><a href="myNotes.html">My Notes</a></li>
+                <li><a href="cheatsheet.html">My Cheatsheets</a></li>
+                <li><a href="userProfile.html">User Profile</a></li>
+                <li><a href="#" onclick="logout();">Logout</a></li>
+            </ul>
+        </li>
+    </ul></nav>
+</header>
+  
+  <br>
+  <div class="mainHeader">
+    <div class="content" style = "background-color: #666;width:100%;border-radius: 6px; padding:25px">
+  
+      <form action="#">
+          <h3 align = "center" >Create Notes</h3>
+       
+      
+      <input type="text" class="form-control" id = "Title" required="required" placeholder = "Title" style = "width:100%"> <br>
+	<br>
+	<!--<input type = "text" class="form-control" id = "Tags" required="required" placeholder = "Topics (Comma seperated)" style = "width:100%"> <br>-->
+	<!--<br>-->
+	
+	
+    <div id="summernote"></div>
+ 
+    <script>
+   
+    $('#summernote').summernote({
+    	
+    	 toolbar: [
+     	    // [groupName, [list of button]]
+     	    
+     	    ['style', ['bold',  'underline','italic', 'clear']],
+     	    ['font', ['strikethrough', 'superscript', 'subscript']],
+     	    ['fontsize', ['fontsize']],
+     	    ['color', ['color']],
+     	    ['para', ['ul', 'ol', 'paragraph']],
+     	    ['height', ['height']]
+     	  ],
+		  placeholder: 'Content',    	
+    	  height: 300,                 // set editor height
+    	  minHeight: 100,             // set minimum height of editor
+    	  maxHeight: 500,             // set maximum height of editor
+    	  focus: true                 // set focus to editable area after initializing summernote
+    	});
+       </script>
+ 	<br>
+ 	<input type = "checkbox">Keep it private
+ 	<br> <br>
+ 	<input type = "submit" value = "Save" onclick="createNote();"> 
+  
+      </form>
+       
+     </div>
+  </div>
+  </body>
+  <script>
+  function createNote()
+  {
+  	event.preventDefault();
+      if( $(':checkbox:checked') == true)
+      	{
+      	var type = '1';
+      	}
+      else var type = '0';
+      var authorId = sessionStorage.getItem('userid');			//(author_id, type, title, content, private_group_id)
+      var title = $('#Title').val();
+      var content = $('#summernote').summernote('code');
+      var groupId = '0';
+      
+//      var group = $('#password').val();
+//      var data = {"fname":firstName, "lname":lastName, "email":email, "password":password, "tags":values};
+      $.post("http://laptop-mohd:3000/notes/new",
+          {
+              author_id: authorId,
+              type: type,
+              title: title,
+              content: content,
+              private_group_id: groupId
+          },
+          function(data, status){
+            if(data == false){
+                alert("Note could not be created");
+              }
+              else{
+                alert("Note created successfully, Please visit myNotes page to view your uploaded note.");
+                window.location.href = "myNotes.html";
+            }
+//              sessionStorage.setItem('userid', data.userid);
+//              var data = sessionStorage.getItem('userid');
+//              alert(data);
+             
+          });
+
+  	
+  }
+  </script>
+</html>
+

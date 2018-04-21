@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type= "text/javascript" src="JS/home.js"></script> 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
+  
+
+
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="CSS/createGroup.css">
+  <link rel="stylesheet" href="CSS/search.css">
+  
+
+
+</head>
+
+
+<body>
+
+
+
+
+<b id="tab1" class="hiddenTarget"></b>
+<b id="tab2" class="hiddenTarget"></b>
+<b id="tab3" class="hiddenTarget"></b>
+<b id="tab4" class="hiddenTarget"></b>
+<b id="tab5" class="hiddenTarget"></b>
+<b id="tab6" class="hiddenTarget"></b>
+<div class="tabbedPages">
+	<ul class="tabs">
+		<li><a href="#tab1" class="default tab1 tabpages">Home</a></li>
+		<li><a href="#tab2" class="tab2 tabpages">Create Notes</a></li>
+		<li><a href="#tab3" class="tab3 tabpages">Cheat Sheets</a></li>
+		<li><a href="#tab4" class="tab4 tabpages">Groups</a></li>
+		<li><a href="#tab5" class="tab5 tabpages">My Notes</a></li>
+		<li><a href="#tab6" class="tab6 tabpages">Search</a></li>
+	</ul>
+
+	<div id="view1" class="tabcontent default" style = "width:100%; border:medium; border-color: black;">
+		<div style="float:left;width:70%; height:1400px; background-color: lightblue;position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 2px solid orange">
+	
+			<div style="padding: 2em; width:100%"  >
+				<h3>Top Notes</h3>
+				<!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card--expand" >
+      <h2 class="mdl-card__title-text">Title</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+      
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" >
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card__accent mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 2</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card--expand" >
+      <h2 class="mdl-card__title-text">Title 3</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+     Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card__accent mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 4</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 5</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card__accent mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 6</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+    
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+			</div>
+		
+		<br>
+		<br>
+			<div style="padding:2em;width:100%">
+				<h3>Recommended Notes</h3>
+				<!-- --------------------------------------------------------------------------------------------------- -->
+				
+				<!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card--expand" >
+      <h2 class="mdl-card__title-text">Title</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+      
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" >
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card__accent mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 2</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card--expand" >
+      <h2 class="mdl-card__title-text">Title 3</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+     Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card__accent mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 4</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 5</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+  <!-- Square card -->
+  <div class="mdl-card mdl-shadow--2dp demo-card-square">
+    <div class="mdl-card__title mdl-card__accent mdl-card--expand">
+      <h2 class="mdl-card__title-text">Title 6</h2>
+    </div>
+    <div class="mdl-card__supporting-text" style="height: 70%">
+      Content
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+    
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View
+        </a>
+    </div>
+  </div>
+			</div>
+				
+				
+				<!-- --------------------------------------------------------------------------------------------------- -->
+				
+				
+			</div>
+	
+	
+		<div style="float:right; height:1400px; width: 30%;background-color: lightpink;border: 2px solid black;border-left: none;">
+		
+		<div style="width: 100%; height:25%;padding:2em">
+			<h4>Recommended Topics</h4>
+			
+		</div>
+	
+		<div style="width: 100%;height:25%;padding:2em" >
+			
+			<h4>Shortcut to your groups</h4>
+		</div>
+		</div>
+		
+</div>
+	
+
+	<div id="view2" class="tabcontent">
+	
+	<input type="text" id = "Title" placeholder = "Title" style = "width:350px"> <br>
+	<br>
+	<input type = "text" id = "Tags" placeholder = "Topics (Comma seperated)" style = "width:350px"> <br>
+	<br>
+    <div id="summernote"></div>
+ 
+    <script>
+   
+    $('#summernote').summernote({
+    	
+    	 toolbar: [
+     	    // [groupName, [list of button]]
+     	    
+     	    ['style', ['bold',  'underline','italic', 'clear']],
+     	    ['font', ['strikethrough', 'superscript', 'subscript']],
+     	    ['fontsize', ['fontsize']],
+     	    ['color', ['color']],
+     	    ['para', ['ul', 'ol', 'paragraph']],
+     	    ['height', ['height']]
+     	  ],
+		  placeholder: 'Content',    	
+    	  height: 300,                 // set editor height
+    	  minHeight: 100,             // set minimum height of editor
+    	  maxHeight: 500,             // set maximum height of editor
+    	  focus: true                  // set focus to editable area after initializing summernote
+    	});
+       </script>
+ 	<br>
+ 	<input type = "checkbox" value = "Keep it private">Keep it private
+ 	<br> <br>
+ 	<input type = "submit" value = "Save"> 
+  
+	<!-- ------------------------------------------------------------------------------------------------------------ -->
+	
+	</div>
+
+	<div id="view3" class="tabcontent" style="width:100%;height:720px;background-color: lightblue">
+		
+
+
+	</div>
+
+
+	
+
+	<div id="view4" class="tabcontent"  style = "width:100%; border:medium; border-color: black">
+
+	 
+	
+  	<div id="form-div">
+    <form class="form" id="form1">		
+      <h3 align="center"> Create Group </h3>
+      <p class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Group Name" id="name" />
+      </p>
+      
+     
+      
+      <p class="text">
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Topics (comma seperated)"></textarea>
+      </p>
+      
+       <p class="email">
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Add users by email (comma seperated)" />
+      </p>
+      
+      <div class="submit">
+        <input type="submit" value="Create" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+      
+      	
+    </form>
+  </div>
+
+  
+  </div>
+ 
+</div>
+
+	<div id="view5" class="tabcontent" style="width:100%;height:720px">
+
+
+		
+<form class="searchform cf">
+  <input type="text" placeholder="Is it me youre looking for?">
+  <button type="submit">Search</button>
+</form>
+
+<p>Dribbble Rebound of <a target="_blank" href="http://dribbble.com/shots/843289-Search-Bar?list=tags&tag=ui">Search Bar</a> by <a target="_blank" href="http://dribbble.com/craftyliang">Liang Shi</a></p>
+ 
+
+  
+
+	</div>
+		
+
+<div id="view6" class="tabcontent">
+		
+<div align="center">		
+<form class="searchform cf">
+
+  <input type="text" placeholder="Enter your search term">
+  <button type="submit">Search</button>
+</form>
+</div>
+
+	</div>		
+
+</body>
+</html>

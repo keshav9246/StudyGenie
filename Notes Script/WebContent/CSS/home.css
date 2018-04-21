@@ -1,0 +1,81 @@
+
+
+
+.hiddenTarget {display:none; position:fixed;}
+.tabbedPages {position:relative; margin:50px 0;}
+ul.tabs {padding:0; margin:0; list-style:none; float:left; position:relative; z-index:100;}
+ul.tabs li {float:left; margin-right:2px;}
+ul.tabs li a {display:block; font:normal 12px/30px arial, sans-serif; border:1px solid #aaa; border-radius:5px 5px 0 0; background:#275a74; padding:0 20px; text-decoration:none; color:#fff;
+
+}
+
+.tabcontent {float:left; width:100%; padding:6px; border:1px solid #aaa; border-radius:0 5px 5px 5px; background:#fff; position:relative; z-index:10; display:none; clear:left; top:-1px;
+ box-shadow:0 15px 10px -15px rgba(0,0,0,0.4);
+}
+.tabcontent p {padding:0 0 5px 0; margin:0; font:normal 12px/20px arial, sans-serif; color:#333;}
+.tabcontent h4 {padding:0 0 10px 0; margin:0; font:bold 14px/25px arial, sans-serif; color:#000;}
+.tabcontent img {border:1px solid #444; display:block; float:left; margin:0 20px 0 0; box-shadow:0 15px 10px -15px rgba(0,0,0,0.4);}
+
+/* change the tab to selected style */
+ul.tabs li a.default,
+#tab1:target ~ .tabbedPages .tabs li a.default,
+#tab2:target ~ .tabbedPages .tabs li a.tab2,
+#tab3:target ~ .tabbedPages .tabs li a.tab3,
+#tab4:target ~ .tabbedPages .tabs li a.tab4,
+#tab5:target ~ .tabbedPages .tabs li a.tab5 {background-color:#744127; border-bottom:1px solid #fff; color:#FFF;}
+#tab6:target ~ .tabbedPages .tabs li a.tab6 {background-color:#744127; border-bottom:1px solid #fff; color:#FFF;}
+
+/* show the tab content */
+div.default,
+#tab1:target ~ .tabbedPages div.default,
+#tab2:target ~ .tabbedPages div#view2,
+#tab3:target ~ .tabbedPages div#view3,
+#tab4:target ~ .tabbedPages div#view4,
+#tab5:target ~ .tabbedPages div#view5 {display:block;}
+#tab6:target ~ .tabbedPages div#view6 {display:block;}
+
+/* reset the unclicked tabs to default */
+#tab2:target ~ .tabbedPages .tabs li a.default,
+#tab3:target ~ .tabbedPages .tabs li a.default,
+#tab4:target ~ .tabbedPages .tabs li a.default,
+#tab5:target ~ .tabbedPages .tabs li a.default {background-color:#275a74; border:1px solid #888; color:#fff;}
+#tab6:target ~ .tabbedPages .tabs li a.default {background-color:#275a74; border:1px solid #888; color:#fff;}
+
+/* hide the default tab when selecting other tabs*/
+#tab2:target ~ .tabbedPages div.default,
+#tab3:target ~ .tabbedPages div.default,
+#tab4:target ~ .tabbedPages div.default,
+#tab5:target ~ .tabbedPages div.default {display:none;}
+#tab6:target ~ .tabbedPages div.default {display:none;}
+
+.clear {clear:left;}
+
+
+  .demo-card-square.mdl-card {
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 1rem;
+    position: relative;
+  }
+  
+  .demo-card-square.mdl-card:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+  }
+  
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background: #03a9f4; 
+  }
+  
+  .demo-card-square > .mdl-card__accent {
+    background: #ff9800;
+  }
+  
+  body {
+    padding: 20px;
+    background: #fafafa;
+    position: relative;
+  }
+
+  			

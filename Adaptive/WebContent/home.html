@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="ISO-8859-1" content="width=device-width, initial-scale=1.8">
+<title>Home Page</title>
+<link rel="stylesheet" href="home.css"></head>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
+<script src="index.js"> </script>
+
+
+</head>
+
+<body class="body">
+
+<br/>
+<div class="row" align="center" style="text-align:center ; padding-left: 43%">
+    <h1 align="center" style="font-family:-webkit-pictograph; font-size: -webkit-pictograph; text-align: center; font-weight: bolder; color:#84BABA;">Study Genie</h1>
+</div>
+<br/>
+<header class="mainHeader">
+
+  <nav><ul>
+    <li class="active"><a href="home.html">Home</a></li>
+    <!-- We give this first list item in the navigation bar a class of "active" because we want to style it differently (along with other nav links that are hovered over) to indicate what page we are on (or will go to) -->
+    <li><a href="createNotes.html	">Create Notes</a></li>
+    <li><a href="groups.html">View Groups</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li class="dropdown float-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome</a>
+      <ul class="dropdown-menu" style="background-color: rgba(72,72,72,8)">
+        <li><a href="myNotes.html">My Notes</a></li>
+        <li><a href="cheatsheet.html">My Cheatsheets</a></li>
+        <li><a href="userProfile.html">User Profile</a></li>
+        <li><a href="#" onclick="logout();">Logout</a></li>
+      </ul>
+    </li>
+  </ul></nav>
+</header>
+
+<br>
+
+<div class="content">
+
+    <div class="topContent" style = "overflow: scroll;">
+        <header>
+            <h3><a href="#" title="First post">Top Notes</a></h3>
+        </header>
+        <!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+        <div id="topNotes">
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="topContent" style = "overflow: scroll;">
+        <header>
+            <h3><a href="#" title="First post">Recommended Notes</a></h3>
+        </header>
+        <!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+        <div id="recommendedNotes">
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+
+</div>
+<aside class="topSidebar" style="width:22%;">
+    <article>
+        <h4 align="center">Recommended Tags</h4>
+        <br/>
+        <br/>
+        <ul id="recommendedTags" style="font-size: large; padding: 15px; margin: 10px;"></ul>
+    </article>
+</aside>
+
+<!--&lt;!&ndash;<aside class="middleSidebar" style="width:22%">&ndash;&gt;-->
+<!--&lt;!&ndash;<article>&ndash;&gt;-->
+<!--&lt;!&ndash;<h4 align="center">Recommended Groups</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;</article>&ndash;&gt;-->
+<!--&lt;!&ndash;</aside>&ndash;&gt;-->
+
+				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__title mdl-card&#45;&#45;expand" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<h2 class="mdl-card__title-text">Title</h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__supporting-text" style="height: 70%">&ndash;&gt;-->
+      <!--&lt;!&ndash;Content&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__actions mdl-card&#45;&#45;border">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >&ndash;&gt;-->
+          <!--&lt;!&ndash;View&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__title mdl-card__accent mdl-card&#45;&#45;expand" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<h2 class="mdl-card__title-text">Title</h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__supporting-text" style="height: 70%">&ndash;&gt;-->
+      <!--&lt;!&ndash;Content&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__actions mdl-card&#45;&#45;border">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >&ndash;&gt;-->
+          <!--&lt;!&ndash;View&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__title mdl-card&#45;&#45;expand" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<h2 class="mdl-card__title-text">Title</h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__supporting-text" style="height: 70%">&ndash;&gt;-->
+      <!--&lt;!&ndash;Content&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__actions mdl-card&#45;&#45;border">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >&ndash;&gt;-->
+          <!--&lt;!&ndash;View&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__title mdl-card__accent mdl-card&#45;&#45;expand" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<h2 class="mdl-card__title-text">Title</h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__supporting-text" style="height: 70%">&ndash;&gt;-->
+      <!--&lt;!&ndash;Content&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__actions mdl-card&#45;&#45;border">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >&ndash;&gt;-->
+          <!--&lt;!&ndash;View&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__title mdl-card&#45;&#45;expand" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<h2 class="mdl-card__title-text">Title</h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__supporting-text" style="height: 70%">&ndash;&gt;-->
+      <!--&lt;!&ndash;Content&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__actions mdl-card&#45;&#45;border">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >&ndash;&gt;-->
+          <!--&lt;!&ndash;View&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&ndash;&gt;-->
+  				<!--&lt;!&ndash;&lt;!&ndash; Square card &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__title mdl-card__accent mdl-card&#45;&#45;expand" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<h2 class="mdl-card__title-text">Title</h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__supporting-text" style="height: 70%">&ndash;&gt;-->
+      <!--&lt;!&ndash;Content&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="mdl-card__actions mdl-card&#45;&#45;border">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >&ndash;&gt;-->
+          <!--&lt;!&ndash;View&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+
+
+
+  <!--</div>-->
+
+
+
+
+
+    <!--&lt;!&ndash; -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &ndash;&gt;-->
+
+      <!--<article class="bottomContent">-->
+        <!--<header>-->
+          <!--<h3><a href="#" title="Second post">Recommended Notes</a></h3>-->
+        <!--</header>-->
+
+        <!--&lt;!&ndash; -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &ndash;&gt;-->
+
+
+
+				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">-->
+    <!--<div class="mdl-card__title mdl-card&#45;&#45;expand" >-->
+      <!--<h2 class="mdl-card__title-text">Title</h2>-->
+    <!--</div>-->
+    <!--<div class="mdl-card__supporting-text" style="height: 70%">-->
+      <!--Content-->
+
+    <!--</div>-->
+    <!--<div class="mdl-card__actions mdl-card&#45;&#45;border">-->
+      <!--<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >-->
+          <!--View-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">-->
+    <!--<div class="mdl-card__title mdl-card__accent mdl-card&#45;&#45;expand" >-->
+      <!--<h2 class="mdl-card__title-text">Title</h2>-->
+    <!--</div>-->
+    <!--<div class="mdl-card__supporting-text" style="height: 70%">-->
+      <!--Content-->
+
+    <!--</div>-->
+    <!--<div class="mdl-card__actions mdl-card&#45;&#45;border">-->
+      <!--<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >-->
+          <!--View-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">-->
+    <!--<div class="mdl-card__title mdl-card&#45;&#45;expand" >-->
+      <!--<h2 class="mdl-card__title-text">Title</h2>-->
+    <!--</div>-->
+    <!--<div class="mdl-card__supporting-text" style="height: 70%">-->
+      <!--Content-->
+
+    <!--</div>-->
+    <!--<div class="mdl-card__actions mdl-card&#45;&#45;border">-->
+      <!--<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >-->
+          <!--View-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">-->
+    <!--<div class="mdl-card__title mdl-card__accent mdl-card&#45;&#45;expand" >-->
+      <!--<h2 class="mdl-card__title-text">Title</h2>-->
+    <!--</div>-->
+    <!--<div class="mdl-card__supporting-text" style="height: 70%">-->
+      <!--Content-->
+
+    <!--</div>-->
+    <!--<div class="mdl-card__actions mdl-card&#45;&#45;border">-->
+      <!--<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >-->
+          <!--View-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">-->
+    <!--<div class="mdl-card__title mdl-card&#45;&#45;expand" >-->
+      <!--<h2 class="mdl-card__title-text">Title</h2>-->
+    <!--</div>-->
+    <!--<div class="mdl-card__supporting-text" style="height: 70%">-->
+      <!--Content-->
+
+    <!--</div>-->
+    <!--<div class="mdl-card__actions mdl-card&#45;&#45;border">-->
+      <!--<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >-->
+          <!--View-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+  <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp demo-card-square">-->
+    <!--<div class="mdl-card__title mdl-card__accent mdl-card&#45;&#45;expand" >-->
+      <!--<h2 class="mdl-card__title-text">Title</h2>-->
+    <!--</div>-->
+    <!--<div class="mdl-card__supporting-text" style="height: 70%">-->
+      <!--Content-->
+
+    <!--</div>-->
+    <!--<div class="mdl-card__actions mdl-card&#45;&#45;border">-->
+      <!--<a class="mdl-button mdl-button&#45;&#45;accent mdl-js-button mdl-js-ripple-effect" >-->
+          <!--View-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  				<!--&lt;!&ndash; Square card &ndash;&gt;-->
+
+
+
+
+
+
+      <!--</article>-->
+  <!--</div>-->
+  <!--<aside class="topSidebar" style="width:22%;">-->
+    <!--<article>-->
+      <!--<h4 align="center">Recommended Tags</h4>-->
+        <!--<br/>-->
+        <!--<br/>-->
+        <!--<ul id="recommendedTags" style="font-size: large; padding: 15px; margin: 10px;"></ul>-->
+    <!--</article>-->
+  <!--</aside>-->
+
+  <!--<aside class="middleSidebar" style="width:22%">-->
+    <!--<article>-->
+      <!--<h4 align="center">Recommended Groups</h4>-->
+    <!--</article>-->
+  <!--</aside>-->
+
+
+
+
+
+<div class="modal" id="viewNoteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #03A9F4; color: white; font-weight: bolder; font-size: x-large;">
+                <h5 class="modal-title" id="viewTitle"></h5>
+            </div>
+            <div class="modal-body" id="viewBody">
+            </div>
+            <div class="modal-footer">
+                <div class="col-xs-8">
+                    <div class="row" id="authorName"></div>
+                    <div class="row" id="relatedTags"></div>
+                    <div class="row" id="likesTag"></div>
+                    <div class="row" id="stars"></div>
+                </div>
+                <div class="col-xs-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  </body>
+<script type="text/javascript">
+    var topCards = {}
+    var recommendedCards = {}
+    $(document).ready(function () {
+        var userid = sessionStorage.getItem('userid');
+        $.ajax({
+            type: "GET",
+            url: "http://laptop-mohd:3000/home/top/notes",
+            dataType: "json",
+            success: function (data) {
+                topCards = data;
+                for(var i=0;i<data.length;i++){
+                    var noteId = data[i].note_id;
+                    var title = data[i].title;
+                    var content = (data[i].content);
+
+
+                    var div = $("<div>", {id: "note_"+[i]});
+                    $("#topNotes").append(div);
+                    $("#note_"+[i]).html(["<div class='mdl-card mdl-shadow--2dp demo-card-square'>",
+                        "<div class='mdl-card__title mdl-card--expand'>",
+                        "<h2 class='mdl-card__title-text'>"+data[i].title+"</h2>",
+                        "</div>",
+                        "<div id='contentText'"+[i]+" class='mdl-card__supporting-text' style='font-size:xx-small; overflow: hidden; width:100%; height: 100%'>",
+                        content,
+                        "</div>",
+                        "<div class='mdl-card__actions mdl-card--border'>",
+                        "<a class='mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'  onclick='viewModal("  + i + ")' data-toggle='modal' data-target='#viewNoteModal'>",
+                        "View",
+                        "</a>",
+                        "<button id='likes' type='button' class='btn btn-default btn-sm float-right'>",
+                        "<div id='noOfLikes'"+[i]+" class='glyphicon glyphicon-thumbs-up' onclick = 'incrementLikes("+this+","+data[i].vote_up+")'>  "+(data[i].vote_up)+"</div>",
+                        
+                        "</button>",
+                        "<button id='favorite' type='button' class='btn btn-default btn-sm float-right'>",
+                        "<span id='noOfFavorite' class='glyphicon glyphicon-bookmark'>  "+data[i].star+"</span>",
+                        "</button>",
+                        "</div>",
+                        "</div>"].join(""));
+                }
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "http://laptop-mohd:3000/home/top/tags/" + userid,
+            dataType: "json",
+            success: function(data){
+                console.log(data[1],data[2]);
+                for(var i=0;i<5;i++){
+                    var li = $("<li>", {id: "tagList"+[i]});
+                    $("#recommendedTags").append(li);
+                    var tag = data[1][i].tag;
+                    $("#tagList"+[i]).html("<a style = 'color:black;text-transform: uppercase;'  href='#' onclick='storeData('+tag+')'>"+data[1][i].tag+"</a>");
+                }
+                for(var i=5;i<10;i++){
+                    var li = $("<li>", {id: "tagList"+[i]});
+                    $("#recommendedTags").append(li);
+                    var tag = data[2][i-5].tag;
+                    $("#tagList"+[i]).html("<a style = 'color:black;text-transform: uppercase;' href='#' onclick='storeData('+tag+')'>"+data[2][i-5].tag+"</a>");
+                }
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "http://laptop-mohd:3000/search/notes/"+userid,
+            dataType: "json",
+            success: function (data) {
+                recommendedCards = data;
+                for(var i=0;i<data.length;i++){
+                    var noteId = data[i].note_id;
+                    var title = data[i].title;
+                    var content = (data[i].content);
+
+                    var div = $("<div>", {id: "rnote_"+[i]});
+                    $("#recommendedNotes").append(div);
+                    $("#rnote_"+[i]).html(["<div class='mdl-card mdl-shadow--2dp demo-card-square'>",
+                        "<div class='mdl-card__title mdl-card--expand'>",
+                        "<h2 class='mdl-card__title-text'>"+data[i].title+"</h2>",
+                        "</div>",
+                        "<div id='contentText'"+[i]+" class='mdl-card__supporting-text' style='font-size:xx-small; width:100%; height: 100%'>",
+                        content,
+                        "</div>",
+                        "<div class='mdl-card__actions mdl-card--border'>",
+                        "<a class='mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'  onclick='viewRecommendedModal("  + i + ")' data-toggle='modal' data-target='#viewNoteModal'>",
+                        "View",
+                        "</a>",
+                        "<button id='likes' type='button' class='btn btn-default btn-sm float-right'>",
+                        "<span id='noOfLikes' class='glyphicon glyphicon-thumbs-up'>  "+data[i].vote_up+"</span>",
+                        "</button>",
+                        "<button id='favorite' type='button' class='btn btn-default btn-sm float-right'>",
+                        "<span id='noOfFavorite' class='glyphicon glyphicon-bookmark'>  "+data[i].star+"</span>",
+                        "</button>",
+                        "</div>",
+                        "</div>"].join(""));
+                }
+            }
+        });
+    });
+
+
+    function storeData(tagName) {
+      //  alert("Button Clicked");
+     //   alert(tagName);
+    }
+
+    function viewModal(id) {
+        $('#viewNoteModal').on('shown.bs.modal', function () {
+            console.log((topCards))
+            $('#viewTitle').text(topCards[id].title);
+            $('#viewBody').html(topCards[id].content);
+            $("#authorName").text("Uploaded By: "+topCards[id].author_name);
+            $("#likesTag").text("No of Likes: "+topCards[id].vote_up);
+            $("#stars").text("Star Marks: "+topCards[id].star);
+        });
+    }
+
+    function viewRecommendedModal(id) {
+        $('#viewNoteModal').on('shown.bs.modal', function () {
+            $('#viewTitle').text(recommendedCards[id].title);
+            $('#viewBody').html(recommendedCards[id].content);
+            $("#authorName").text("Uploaded By: " + recommendedCards[id].author_name);
+            $("#likesTag").text("No of Likes: " + recommendedCards[id].vote_up);
+            $("#stars").text("Star Marks: " + recommendedCards[id].star);
+        });
+    }
+    
+    function incrementLikes( id, count ) {
+    	console.log(id);
+           count = count+1;
+          //
+          //$("#id").load(location.href + "#id");
+          /*   var x = $('#noOfLikes'+i).html();
+            //varx = document.getElementById("noOfLikes[2]").html();
+            
+           // console.log(x);
+           $('#noOfLikes'+[i]).html(count);
+           //document.getElementById("no")
+          console.log("called function");
+           //var x = document.getElementById("noOfLikes"+i);
+            console.log(x);
+            console.log(count);
+            //x.html = count;
+            //console.log(x.html); */
+            
+           // var id = elem.id;
+            console.log(id);
+            $("#id").html(count);
+      
+       
+    }
+</script>
+</html>

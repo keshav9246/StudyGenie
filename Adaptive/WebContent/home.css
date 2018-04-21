@@ -1,0 +1,303 @@
+
+
+body {
+  
+  
+  background-color:#E9E9E9;
+  color: #000905;
+  font-size: 87.5%;
+  font-family: Arial, 'Lucida Sans Unicode';
+  line-height: 1.5;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: #cf5c3f;
+  
+}
+
+a:hover, a:active {
+  color: #FFF;
+  background-color: #cf5c3f; /* Common practice is to invert the color used for the static link to the background color, then make the actual text color white, black, or something different*/
+}
+
+
+
+.body {
+  margin: 0 auto;
+  width: 92%;
+  clear: both; /*HEY LOOK THIS UP AND RESEARCH*/
+  background-color: grey;
+}
+
+.mainHeader img {
+  width: 30%;
+  height: auto;
+  margin: 2% 0; /*puts space between top of body, main logo, and nav bar*/
+}
+
+.mainHeader nav {
+  background-color: rgba(72,72,72,8);
+  height: 40px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.mainHeader nav ul {
+  list-style: none; /*Gets rid of bullet points*/
+  margin: 0 auto;
+}
+
+.mainHeader nav ul li {
+  float: left; /*smacks the boxes of these elements to the left, leaving no space between each other*/
+  display: inline; /*displays elements next to each other, cancelling out the browser's automatic 'block' display*/
+}
+
+.mainHeader nav a:link, .mainHeader nav a:visited {
+  /*This selector is for styling normal/visited links to KEEP them normal.  We don't want them to look like default browser-styled links, so we make the text white as well as center them in their boxes.  The NEXT selector adds highlight colors over current and "active" links ONLY. */
+  color: #FFF;
+  display: inline-table;
+  padding: 8px 25px;
+  height:  20px;
+  /*The padding height + the actual height of each link box's styling fits the box of the nav element.  So top and bottom padding (10px+10px) + the height of the actual link box (20px) equals the height of the nav box (40px)*/
+  
+  /* Inline elements: Respect left & right margins and padding, but not top & bottom; cannot have a width and height set; allow other elements to sit to their left and right.
+  
+  Block elements: Respect all of those; force a line break after the block element.
+  
+  Inline-block elements: Allow other elements to sit to their left and right; respect top & bottom margins and padding; respect height and width. */
+  
+  /*Padding pushes around (and even centers) content in an element's box, while height only physically expands the box downwards*/
+} 
+
+.mainHeader nav a:hover, .mainHeader nav a:active, .mainHeader nav .active a:link, .mainHeader nav .active a:visited {
+  /* There's a lot going on here.  All the links that are normal in the active class, as well as the visited links, are being styled in the nav bar.*/
+background-color:#84BABA;
+text-shadow: aqua; /* Failsafe */
+  
+  /*If this selector is not used, ALL the links in the navbar would have been styled to to the active/highlight color*/
+}
+
+
+.mainHeader nav ul li a {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*copied from the beginning of the document, it gives the link boxes rounded edges (radius) */
+}
+
+
+
+
+
+
+
+.mainContent {
+  line-height: 25px; /* spacing between lines */
+  overflow: auto; /* if two boxes conflict in space dimentions, it will overlap */
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /* same as last content */
+}
+
+.content {
+  width: 74%;
+  float: left;
+  position: relative;
+}
+
+.topContent {
+  background-color: #FFF;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 2% 5%;
+  margin-top: 3%;
+  position: relative;
+  overflow:auto;
+  
+}
+
+.bottomContent {
+  overflow:auto;
+  background-color: #FFF;
+  position: relative;  
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 2% 5%;
+  margin-top: 2%;
+  margin-bottom: 100%; /* !!!!Why is it that when this isn't included, the bottom sidebar shifts to the left?!!!!! */
+}
+
+.postInfo {
+  font-style: italic;
+  color: #999;
+  font-size: 75%;
+}
+
+
+
+
+
+
+
+
+.topSidebar {
+  width: 17%;
+  float: right;
+  margin: 2% 0% 2% 3%; /*should only apply to the top sidebar to seperate it from the top navbar*/
+  
+  padding: 2% 3%; /* width (21%) + the push of the left margin (3%) + the left and right padding space (3% + 3%) = 30%, matching it up with the right side of the navigation bar above. This adds to the .content section, which is already taking up 70% of the body as a box.*/
+  background-color: #84BABA;
+  border-radius: 2px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color:#fff;
+  height: 401px;
+  overflow:auto;
+}
+
+.middleSidebar {
+  width: 17%;
+  float: right;
+  margin: 0% 0% 2% 3%;
+  padding: 2% 3%;
+  background-color: #84BABA;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+   color:#fff;
+    height: 401px;
+    overflow:auto;
+}
+
+.bottomSidebar {
+	overflow:auto;
+  width: 17%;
+  float: left;
+  margin: 0% 0% 2% 3%;
+  padding: 2% 3%;
+  background-color: #84BABA;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+   color:#fff;
+    height: 401px;
+    		
+}
+
+.mainFooter {
+  width: 100%;
+  float: left;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #666;
+  margin: 2% 0%;
+  
+}
+
+.mainFooter p {
+  width: 92%;
+  margin: 2% auto;
+  color: #FFF;
+  
+}
+
+
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  .body {
+  width: 90%;
+  font-size: 95%;
+}
+  
+  .mainHeader img {
+  width: 100%;
+}
+  
+  .mainHeader nav {
+  height: 160px;
+}
+
+.mainHeader nav ul {
+  padding-left: 0; /* so everything starts on the left */
+}
+
+.mainHeader nav ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.mainHeader nav a:link, .mainHeader nav a:visited {
+  padding: 10px 25px;
+  height:  20px;
+  display: block; /* for some reason this makes the highlight portion of links when active/hovered take up the whole block */
+} 
+
+
+
+.content {
+  width: 100%; /* Just like with the nav list items, we want the content box to take up the whole width */
+  float: left;
+  margin-top: 2%; /* Just for some extra space for these small screens */
+}
+
+.postInfo {
+  
+  display: none; /* When mobile, we don't want little clutter info like this to be present.  It isn't always needed.  Hide what isn't needed. */
+  
+}
+    
+.topContent {
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
+
+.bottomContent {
+  margin-top: 3%;
+  margin-bottom: 4%; /* !!!!Why is it that when this isn't included, the bottom sidebar shifts to the left?!!!!! */
+}
+
+
+ .topSidebar, .middleSidebar, .bottomSidebar {
+  width: 94%;
+  margin: 2% 0% 2% 0%;
+  padding: 2% 3%;
+}
+  
+  
+}
+
+
+  .demo-card-square.mdl-card {
+    width: 220px;
+    height: 250px;
+    float: left;
+    margin: 1rem;
+    position: relative;
+  }
+  
+  .demo-card-square.mdl-card:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+  }
+  
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background: #03a9f4; 
+  }
+  
+  .demo-card-square > .mdl-card__accent {
+    background: #ff9800;
+  }
+  
+ 
+
+  			
